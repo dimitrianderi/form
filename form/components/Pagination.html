@@ -1,0 +1,13 @@
+<?php $link = '../scripts/handlers/pagination_handler.php'; ?>
+<?php $disabled_start = ($current_page <= 0) ? 'disabled' : '' ?>
+<?php $disabled_end = ($current_page >= $max_pages - 1) ? 'disabled' : '' ?>
+
+<nav class="nav">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link <?=$disabled_start;?>" data-btn="first" href=<?=$link;?>?btn=first><i class="fa-solid fa-angles-left"></i></a></li>
+    <li class="page-item"><a class="page-link <?=$disabled_start;?>" href=<?=$link;?>?btn=prev data-btn="prev"><i class="fa-solid fa-chevron-left"></i></a></li>
+    <li class="page-item"><a class="page-link page" href="#" id="btn-page"><?=$current_page+1;?></a></li>
+    <li class="page-item"><a class="page-link <?=$disabled_end;?>" href=<?=$link;?>?btn=next data-btn="next"><i class="fa-solid fa-chevron-right"></i></a></li>
+    <li class="page-item"><a class="page-link <?=$disabled_end;?>" href=<?=$link;?>?btn=last data-btn="last"><i class="fa-solid fa-angles-right"></i></a></li>
+  </ul>
+</nav>

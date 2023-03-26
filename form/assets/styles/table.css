@@ -1,0 +1,44 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table {
+    background-color: #fff3cd;
+    color: #7b3e19;
+    border: 2px solid #7b3e19;
+}
+
+.table th,
+.table td {
+    border: 1px solid #7b3e19;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #8B4513;
+    color: white;
+}
+
+td#id {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+tbody tr td {
+    border: 2px solid #cccccc;
+}
+
+
+thead tr th {
+    border: 2px solid #8B4513;
+}
+
+.error {
+    border: 2px solid red;
+}

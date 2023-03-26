@@ -1,0 +1,38 @@
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]+label::before {
+    content: "\2714";
+    display: inline-block;
+    margin-right: 5px;
+    color: #8b4513;
+}
+
+input[type="checkbox"]+label::before {
+    content: "\2610";
+}
+
+input[type="checkbox"]:checked+label::before {
+    margin-right: 6px;
+    content: "\2714";
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]+label::before {
+    content: "\25CF";
+    display: inline-block;
+    margin-right: 5px;
+    color: brown;
+}
+
+input[type="radio"]+label::before {
+    content: "\25CB";
+}
+
+input[type="radio"]:checked+label::before {
+    content: "\25CF";
+}

@@ -1,0 +1,36 @@
+.close {
+    color: #7a3e11;
+    transition: all .2s ease;
+}
+
+.close:hover {
+    color: #663300;
+}
+
+.modal-dialog {
+    max-width: 70%;
+    margin: auto;
+}
+
+.nav-wrapper {
+    display: grid;
+}
+
+.nav ul {
+    margin-bottom: 0;
+}
+
+.btn-main {
+    float: left;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    justify-self: start;
+}
+
+.hide {
+    display: none;
+}
+
+#modal-message {
+    font-style: italic;
+}

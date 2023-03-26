@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/favicon.ico">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/styles/index.css" />
+    <title>Форма обратной связи</title>
+  </head>
+  <body>
+    <div class="container my-2">
+      <h1 class="text-center mb-2">Свяжитесь с нами</h1>
+      <form action="index.php" method="POST" enctype="multipart/form-data">
+        <div class="row">
+          <div class="form-group col-4">
+            <label for="name">Имя <span class="warning">*</span></label>
+            <input
+              type="text"
+              class="form-control <?php echo (!empty($error_messages["name"])) ? 'error' : ''; ?>"
+              id="name"
+              name="name"
+              placeholder="<?php echo !empty($error_messages["name"]) ? $error_messages["name"] : "Имя должно быть от 3 до 15 символов"; ?>"
+              required
+            />
+          </div>
+          <div class="form-group col-4">
+            <label for="email">Email <span class="warning">*</span></label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Введите электронную почту"
+              required
+            />
+          </div>
+          <div class="form-group col-4">
+            <label for="password">Пароль <span class="warning">*</span></label>
+            <input
+              type="password"
+              class="form-control <?php echo (!empty($error_messages["password"])) ? 'error' : ''; ?>"
+              id="password"
+              name="password"
+              placeholder="<?php echo !empty($error_messages["password"]) ? $error_messages["password"] : "Пароль должен быть от 8 символов"; ?>"
+              required
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-4">
+            <label>Ваш пол:</label>
+            <div class="form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="male"
+                name="gender"
+                value="m"
+                checked
+              />
+              <label class="form-check-label value" for="male">Мужской</label>
+            </div>
+            <div class="form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="female"
+                name="gender"
+                value="f"
+              />
+              <label class="form-check-label value" for="female">Женский</label>
+            </div>
+          </div>
+          <div class="form-group col-4">
+            <h3 class="label">Ваши навыки:</h3>
+            <div class="form-check">
+              <input
+              class="form-check-input"
+              type="checkbox"
+              value="php"
+              name="skills[]"
+              id="php"
+              />
+              <label class="form-check-label value" for="php"> PHP </label>
+            </div>
+            <div class="form-check">
+              <input
+              class="form-check-input"
+              type="checkbox"
+              value="js"
+              name="skills[]"
+              id="js"
+              />
+              <label class="form-check-label value" for="js"> JavaScript </label>
+            </div>
+            <div class="form-check">
+              <input
+              class="form-check-input"
+              type="checkbox"
+              value="mysql"
+              name="skills[]"
+              id="mysql"
+              />
+              <label class="form-check-label value" for="mysql"> MySQL </label>
+            </div>
+          </div>
+          <div class="form-group col-4">
+            <label for="select">Ваша страна:</label>
+            <select class="form-control" id="select" name="country">
+              <option class="option" value="">Выберите страну</option>
+              <option value="ru">Россия</option>
+              <option value="uz">Узбекистан</option>
+              <option value="another">Другая</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-6">
+            <label for="title">Заголовок: <span class="warning">*</span></label>
+            <input
+              type="text"
+              class="form-control <?php echo (!empty($error_messages["title"])) ? 'error' : ''; ?>"
+              id="title"
+              name="title"
+              placeholder="<?php echo !empty($error_messages["title"]) ? $error_messages["title"] : "Заголовок должен быть до 30 символов"; ?>"
+              required
+            ></input>
+          </div>
+          <div class="form-group col-6">
+            <label for="file">Загрузить файл</label>
+            <input type="file" class="form-control-file" id="file" name="file"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Сообщение: <span class="warning">*</span></label>
+          <textarea
+            class="form-control <?php echo (!empty($error_messages["message"])) ? 'error' : ''; ?>"
+            id="message"
+            rows="3"
+            placeholder="<?php echo !empty($error_messages["message"]) ? $error_messages["message"] : "Текст должен быть до 150 символов"; ?>"
+            required
+            name="message"
+          ></textarea>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-4 col-12">
+            <label for="checkbox"
+              >Политика конфиденциальности <span class="warning">*</span></label
+            >
+            <div class="form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="agreement"
+              />
+              <label class="form-check-label value" for="agreement"
+                >Я согласен на всё</label
+              >
+            </div>
+          </div>
+          <div class="form-group col-md-4 col-12 d-flex justify-content-center align-items-end">
+            <a class="btn btn-primary" href="index.php?mode=table">Посмотреть таблицу</a>
+          </div>
+          <div class="form-group col-md-4 col-12 d-flex justify-content-end align-items-end">
+            <button type="reset" class="btn btn-secondary" id="reset">Сброс</button>
+            <button type="submit" class="btn btn-primary" id="submit" disabled>Отправить</button>
+          </div>
+        </div>
+        <hr>
+        <small class="form-text text-muted mt-2"
+          ><span class="warning">*</span> - обязательные для заполнения поля.</small
+        >
+      </form>
+    </div>
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./../scripts/front-end/submitDisabledHandler.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+    "gender": {
+        "m": "Мужчина",
+        "f": "Женщина"
+    },
+    "country": {
+        "ru": "Россия",
+        "uz": "Узбекистан",
+        "another": "Другая"
+    },
+    "skills": {
+        "js": "JavaScript",
+        "php": "PHP",
+        "mysql": "MySQL"
+    }
+}
